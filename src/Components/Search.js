@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 //importo constantes donde guardo la API key y URLS
 import { SEARCH_API, API_KEY } from '../const';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -32,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
             outline: "2px solid green",
         }
     },
+    title: {
+        width: "40%",
+        marginLeft: "30%"
+    }
 }))
 
 const Search = () => {
@@ -57,7 +60,7 @@ const Search = () => {
     }
 
     return (
-        <div>
+        <main>
             <div className={classes.title}>
                 <h1>Buscador de películas</h1>
                 <p>¡Escriba el nombre de la película que quiera ver y conozca toda la información sobre ella!</p>
@@ -85,7 +88,7 @@ const Search = () => {
             </div>
 
             {
-                matches?.length >= 0 && (
+                matches?.length >= 3 && (
                     <div className="results">
                         {matches.map(movie => (
                                 <Link to={`/${movie.id}`} className={classes.moviesLink}>
@@ -98,7 +101,7 @@ const Search = () => {
                     </div>
                 )
             }
-        </div>
+        </main>
     )
 }
 

@@ -43,7 +43,8 @@ const MoviesCard = () => {
 
     return (
         /*creo un componente Card de material UI para poder mostrar la info en el FE*/
-        <Card className={classes.root}>
+        <main>
+            <Card className={classes.root}>
             {movie.poster_path ? (
                 <CardMedia
                     className={classes.media}
@@ -61,6 +62,7 @@ const MoviesCard = () => {
                 <h5>Release date: {movie.release_date}</h5>
             </CardContent>
         </Card>
+        </main>
     )
 }
 
