@@ -3,16 +3,30 @@ import React from 'react';
 import { AppBar } from '@material-ui/core';
 import { Toolbar } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() => ({
+    linkHome: {
+        color: "white",
+        '&focus': {
+            outline: "2px solid white"
+        }
+    }
+}))
 
 
 const Header = () => {
+    const classes = useStyles()
     
     return (
         <div>
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6">
-                        MoviesDB searcher
+                        <Link to="/" className={classes.linkHome}>
+                            MoviesDB searcher
+                        </Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
